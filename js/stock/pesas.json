@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Mancuerna hexagonal 20 lb",
+        "id": 1,
+        "price": 2600,
+        "before": 3200,
+        "cantidad": 1,
+        "img": "./pesas/1.jpg"
+    },
+    {
+        "title": "Mancuernas de 3 lb",
+        "id": 2,
+        "price": 1300,
+        "before": 2000,
+        "cantidad": 1,
+        "img": "./pesas/2.jpg"
+    },
+    {
+        "title": "Juego básico de mancuernas",
+        "id": 1,
+        "price": 3100,
+        "before": 3800,
+        "cantidad": 1,
+        "img": "./pesas/3.jpg"
+    }
+]

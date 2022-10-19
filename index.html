@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Grande</title>
-    <link rel="stylesheet" href="estilos.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <title>ProFit</title>
+    <link rel="stylesheet"  href="styles.css">
 </head>
-
 <body>
-    <div class="img">
-        <img src="./img/logoMarca.jpg" alt="">
+    <header id="navbar">
+        <div>
+            <img src="./logo/logo.png" width="60" alt="">
+        </div>
+        <div id="categoria">
+            <h1>Pesas</h1>
+        </div>
+        
+                <a class="links" href="#">Ropa</a>
+                <a class="links" href="#">Pesas</a>
+                <a class="links" href="">Accesorios</a>
+        
+        <div>
+            <button id="btn-carrito">Carrito <img src="./logo/carrito.png" width="25" alt=""></button>
+            <dialog id="modal">
+                <h2>Mis productos</h2>
+                <hr>
+                <br>
+                <p>Un biuen de cosas</p>
+                <button id="cerrar-carrito">Cerrar</button>
+            </dialog>
+        </div>
+    </header>
+
+    <main>
+        <div id="producto-contenedor">
+        <div class="modal-container"></div>
     </div>
-
-    <main id="producto-contenedor">
-
-
     </main>
-
-    <!-- <script src="app.js"></script> -->
-    <script src="stock.js"></script>
-    <script src="app.js"></script>
+    <script src="./js/app.js"></script>
 </body>
-
 </html>
