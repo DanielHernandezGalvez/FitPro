@@ -20,14 +20,15 @@
 }
 .nav-label, .nav-input{
     display: none;
+    align-items: center;
 }
 
 .nav-menu{
     display: grid;
     grid-auto-flow:column;
     gap: 3em;
+    
 }
-
 .links{
     font-weight: bolder;
     color: #9A9A9A ;
@@ -38,6 +39,8 @@
 .links:hover{
     color:#344A53;
 }
+
+
 
 .links{
     text-decoration: none;
@@ -85,7 +88,7 @@
     .nav-menu{
         position: fixed;
         top: 0px;
-        bottom: 0;
+        height: 40px;
         background-color:#FAFAFA ;
         width: 100%;
         left: 0px;
