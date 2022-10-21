@@ -1,7 +1,9 @@
 // Modal carrito
-const btnModalCarrito = document.querySelector("#btn-carrito");
-const btnCerrarCarrito = document.querySelector("#cerrar-carrito");
+const modalCarrito = document.querySelector(".modal-carrito")
+const btnModalCarrito = document.getElementById("btn-carrito");
+const btnCerrarCarrito = document.getElementById("cerrar-carrito");
 const modal = document.querySelector("#modal");
+
 
 btnModalCarrito.addEventListener("click", () => {
     modal.showModal()
@@ -10,3 +12,11 @@ btnModalCarrito.addEventListener("click", () => {
 btnCerrarCarrito.addEventListener("click", () => {
     modal.close()
 })
+
+// modal.addEventListener("click", () =>{
+//     btnCerrarCarrito.click()
+// })
+
+// modal.addEventListener('click', (e) => {
+//     e.stopPropagation()
+// })

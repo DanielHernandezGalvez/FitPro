@@ -67,7 +67,7 @@
 }
 
 
-@media (max-width: 990px){
+@media (max-width: 790px){
     p{
         font-size:90%;
     }
@@ -76,7 +76,13 @@
     
     }
   
-   
+    .productoEnCarrito{
+        display: block;
+        color: #9A9A9A;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .card-image{
         width: 100px;
     }
@@ -111,7 +117,16 @@
 
 
 
-
+.modal-carrito {
+    position: fixed;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  }
 
 
 .card-image{
@@ -184,7 +199,23 @@ del{
 #cerrar-carrito:hover{
         background-color: #344A53 ;
 }
+.btn-eliminar-del-carrito{
+    font-size: 12px;
+    display: flex;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 76, 65);
+    color: #FAFAFA;
+    border-radius: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+}
 
+.btn-eliminar-del-carrito:hover{
+    background-color: #344A53;
+}
 /* Modal */
 #modal::backdrop{
     background-color: rgba(0, 0, 0, 0.10);
@@ -195,8 +226,8 @@ del{
     color: #9A9A9A;
     font-weight: bold;
     border: none;
-    border-radius: 5%;
-    max-width: 90%;
+    border-radius: 20px;
+    width: 70%;
 }
 h2{
     color: #9A9A9A;
@@ -236,7 +267,7 @@ hr{
   .modal-container {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vh;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -252,3 +283,19 @@ hr{
     visibility:  visible;
     z-index: 5;
   }
+  .productoEnCarrito{
+    display: flex;
+    color: #9A9A9A;
+    justify-content: space-around;
+    align-items: center;
+   
+   }
+   @media (max-width: 790px){
+    
+  
+    .productoEnCarrito{
+        display: block;
+        color: #9A9A9A;
+        justify-content: space-around;
+        align-items: center;
+    }}

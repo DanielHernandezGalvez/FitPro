@@ -17,19 +17,22 @@ const mostrarProductos = (productos) => {
         </div>
          `
          contenedorProductos.appendChild(div)  
+
+         const botonCompra = document.getElementById(`boton${producto.id}`)
+
+         botonCompra.addEventListener('click', ()=> {
+            mostrarCarrito(producto.id)
+            Swal.fire({
+                        title: 'Se agregó al carrito',
+                        icon: 'success',
+                        timer: 2000,
+                        allowOutsideClick: true,
+                        confirmButtonColor: '#56C0E7',
+                
+                    }) 
+         })
     })
 }
 
 mostrarProductos(productos)
-// const boton = document.getElementById(`boton${pesas.id}`);
-// boton.addEventListener('click', () => {
-//     carritoIndex(producto.id)
-//     Swal.fire({
-//         title: 'Se agregó al carrito',
-//         icon: 'success',
-//         timer: 2000,
-//         allowOutsideClick: true,
-//         confirmButtonColor: '#FF8000',
 
-//     })
-// })
