@@ -5,7 +5,7 @@ const productos = [
       price: 2600,
       before: 3200,
       cantidad: 1,
-      img: "pesas-img/1.png"
+      img: "./public/images/pesas-img/1.png"
     },
 
     {
@@ -14,7 +14,7 @@ const productos = [
       price: 1300,
       before: 2000,
       cantidad: 1,
-      img: "pesas-img/2.png"
+      img: "./public/images/pesas-img/2.png"
     },
 
     {
@@ -23,7 +23,7 @@ const productos = [
       price: 3100,
       before: 3800,
       cantidad: 1,
-      img: "pesas-img/3.png"
+      img: "./public/images/pesas-img/3.png"
     },
     {
       id: 4,
@@ -31,7 +31,7 @@ const productos = [
       price: 1500,
       before: 2400,
       cantidad: 1,
-      img: "pesas-img/4.png"
+      img: "./public/images/pesas-img/4.png"
     },
     {
       id: 5,
@@ -39,7 +39,7 @@ const productos = [
       price: 1700,
       before: 2300,
       cantidad: 1,
-      img: "pesas-img/5.png"
+      img: "./public/images/pesas-img/5.png"
     },
     {
       id: 6,
@@ -47,7 +47,7 @@ const productos = [
       price: 4000,
       before: 5000,
       cantidad: 1,
-      img: "pesas-img/6.png"
+      img: "./public/images/pesas-img/6.png"
     },
     {
       id: 7,
@@ -55,7 +55,7 @@ const productos = [
       price: 3900,
       before: 4500,
       cantidad: 1,
-      img: "pesas-img/7.png"
+      img: "./public/images/pesas-img/7.png"
     },
     {
       id: 8,
@@ -63,6 +63,8 @@ const productos = [
       price: 3100,
       before: 3500,
       cantidad: 1,
-      img: "pesas-img/8.png"
+      img: "./public/images/pesas-img/8.png"
     },
   ]
+
+  export {productos};

@@ -1,4 +1,5 @@
-// Mostrar productos
+import { validarProductoRepetido } from "./src/mostrarCarrito.js"
+import { productos } from "./src/pesas.js";
 
 const mostrarProductos = (productos) => {
     const contenedorProductos = document.getElementById("producto-contenedor")
@@ -16,21 +17,21 @@ const mostrarProductos = (productos) => {
             </div>
         </div>
          `
-         contenedorProductos.appendChild(div)  
+        contenedorProductos.appendChild(div)
 
-         const botonCompra = document.getElementById(`boton${producto.id}`)
+        const botonCompra = document.getElementById(`boton${producto.id}`)
 
-         botonCompra.addEventListener('click', ()=> {
-            mostrarCarrito(producto.id)
+        botonCompra.addEventListener('click', () => {
+            validarProductoRepetido(producto.id)
             Swal.fire({
-                        title: 'Se agregó al carrito',
-                        icon: 'success',
-                        timer: 2000,
-                        allowOutsideClick: true,
-                        confirmButtonColor: '#56C0E7',
-                
-                    }) 
-         })
+                title: 'Se agregó al carrito',
+                icon: 'success',
+                timer: 2000,
+                allowOutsideClick: true,
+                confirmButtonColor: '#56C0E7',
+
+            })
+        })
     })
 }
 
