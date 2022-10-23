@@ -1,8 +1,13 @@
 import { productos } from "./pesas.js";
 import { actualizarTotal } from "./actualizarCarrito.js";
+import { obtenerCarritoStorage } from "./storage.js";
 
-const carritDeCompra = [];
+let carritDeCompra = [];
 const validarProductoRepetido = (productoId) => {
+
+    if(localStorage.getItem('carritDeCompra')){ 
+        carritDeCompra = obtenerCarritoStorage()
+    }
     const productoRepetido = carritDeCompra.find(producto => producto.id === productoId);
 
     if (productoRepetido) {
@@ -35,23 +40,36 @@ const mostrarCarrito = (productoId) => {
             `
         contenedorCarrito.appendChild(div)
         actualizarTotal(carritDeCompra)
-    }
+    };
   
-    // const eliminarDelCarrito = (productoId) => {
-    //     const item = carritDeCompra.find((producto) => producto.id == productoId)
-    //     const indice = carritDeCompra.indexOf(item)
-    //     carritDeCompra.splice(indice, 1)
-            
-    //     Toastify({
-    //         text: "Se eliminó del carrito",
-    //         gravity: "bottom",
-    //         style: {
-    //           background:  '#FF8000',
-    //           color: '#ffffff'
-    //         }
-    //       }).showToast();
-    //       mostrarCarrito(productoId)	
-    // }
-    // Te quedaste en el minuto 49
+    const pintarCarrito = (carrito) => {
+        const contenedorCarrito = document.getElementById('modal');
 
-export { validarProductoRepetido, mostrarCarrito }
+
+        carrito.forEach(producto => {
+        const div = document.createElement("div")
+        div.classList.add("productoEnCarrito")
+        div.innerHTML = `
+            <br>
+            <p>${producto.title}</p>  
+            <img src="${producto.img}" width="20%" />
+            <p>Precio: ${producto.price}</p> 
+            <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>      
+            <button id="eliminar${producto.id}"  class="btn-eliminar-del-carrito">Eliminar</button> 
+            <hr>
+            `
+        contenedorCarrito.appendChild(div)
+    });
+};
+
+const eliminarProductoCarrito = (productoId) => {
+    const carritoStorage = obtenerCarritoStorage();
+    const carritoActualizado = carritoStorage.filter(producto => producto.id != productoId);
+
+  
+    actualizarTotal(carritoActualizado)
+    pintarCarrito(carritoActualizado)
+}
+  
+
+export { validarProductoRepetido, mostrarCarrito, pintarCarrito, eliminarProductoCarrito }

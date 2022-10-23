@@ -1,5 +1,4 @@
 import { validarProductoRepetido } from "./src/mostrarCarrito.js"
-import { productos } from "./src/pesas.js";
 
 const mostrarProductos = (productos) => {
     const contenedorProductos = document.getElementById("producto-contenedor")
@@ -35,5 +34,5 @@ const mostrarProductos = (productos) => {
     })
 }
 
-mostrarProductos(productos)
 
+export { mostrarProductos }
