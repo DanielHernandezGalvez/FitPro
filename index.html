@@ -1,67 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProFit</title>
-    <link rel="stylesheet" href="./public/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
+    <title>FitPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+<body>
 
-<body id="body">
-    <header id="header">
-        <div>
-            <img src="./public/images/logo/logo.png" width="60" alt="">
-        </div>
-        <div id="categoria">
-            <h1>Pesas</h1>
-        </div>
-        <label for="menu" class="nav-label">
-            <img src="./public/images/menu-flex.png" class="nav-img">
-        </label>
-        <input type="checkbox" id="menu" class="nav-input">
-        <div class="nav-menu">
-            <a class="links" href="#">Ropa</a>
-            <a class="links" href="#">Pesas</a>
-            <a class="links" href="">Accesorios</a>
+  <nav class="menu-container">
+    <!-- burger menu -->
+    <input type="checkbox" aria-label="Toggle menu" />
+    <span></span>
+    <span></span>
+    <span></span>
+  
+    <!-- logo -->
+    <a href="#" class="menu-logo">
+      <img src="./img/logo.png" alt="My Awesome Website"/>
+    </a>
+  
+    <!-- menu items -->
+    <div class="menu">
+      <ul>
+       
+      </ul>
+      <ul>
+        <li>
+          <a href="#compra">
+            Pesas para gimnasio
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+        <hr>
+        
+        <h4>Carrito de compras</h4>
 
-            <button id="btn-carrito" class="links"> <img src="./public/images/logo/carrito.png" width="25" alt=""><span
-                    id="contador-carrito">0</span>
-            </button>
-            <dialog id="modal">
-
-                <h2>Mis productos</h2>
-                <hr>
-                <br>
-                <div class="productoEnCarrito"></div>
-                <p class="links">Precio total: $<span id="precio-total"></span></p>
-                <button id="cerrar-carrito">Cerrar</button> <br>
-            </dialog>
-        </div>
-    </header>
-
-    <main id="producto-contenedor">
-
-        <div class="modal-container" id="modal_container">
-
-        </div>
-
-    </main>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acción</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="items"></tbody>
+          <tfoot>
+            <tr id="footer">
+              <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="row" id="cards"></div>
+    </div>
     
+    <template id="template-footer">
+      <th scope="row" colspan="2">Total productos</th>
+      <td>10</td>
+      <td>
+          <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+              vaciar todo
+          </button>
+      </td>
+      <td class="font-weight-bold">$ <span>5000</span></td>
+  </template>
+  
+  <template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+          <button class="btn btn-info btn-sm">
+              +
+          </button>
+          <button class="btn btn-danger btn-sm">
+              -
+          </button>
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
 
-    <script src="./src/pesas.js" type="module"></script>
-    <script src="./src/modal.js" type="module"></script>
-    <script src="./src/mostrarCarrito.js" type="module"></script>
-    <script src="./src/actualizarCarrito.js" type="module"></script>
-    <script src="./src/storage.js" type="module"></script>
-    <script src="app.js" type="module"></script>
-    <script src="index.js" type="module"></script>
+    <template id="template-card">
+        <div class="col-12 mb-2 col-md-4">
+          <div class="card" class="card-img-top">
+            <img src="" alt="">
+            <div class="card-body">
+              <h5>Titulo</h5>
+               <del>antes</del> <p>precio</p>
+               <button class="btn btn-dark">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </template>
+
+    <script src="app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
 </body>
-
 </html>
