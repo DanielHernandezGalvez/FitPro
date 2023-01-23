@@ -77,7 +77,6 @@ const setCarrito = objeto => {
         timer: 2000,
         allowOutsideClick: true,
         confirmButtonColor: '#33b5e5',
-
     })
     pintarCarrito()
 }
